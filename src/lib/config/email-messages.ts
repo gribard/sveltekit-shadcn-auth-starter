@@ -1,5 +1,5 @@
-import sendEmail from '$lib/server/email-send';
-import { BASE_URL, APP_NAME } from '$lib/config/constants';
+import sendEmail from "$lib/server/email-send";
+import { BASE_URL, APP_NAME } from "$lib/config/constants";
 
 // Send an email to verify the user's address
 export const sendVerificationEmail = async (email: string, token: string) => {
@@ -14,8 +14,8 @@ export const sendVerificationEmail = async (email: string, token: string) => {
 
 // Send an email to welcome the new user
 export const sendWelcomeEmail = async (email: string) => {
-	const textEmail = `Thanks for verifying your account with ${APP_NAME}.\nYou can now sign in to your account at the link below.\n\n${BASE_URL}/auth/sign-in`;
-	const htmlEmail = `<p>Thanks for verifying your account with ${APP_NAME}.</p><p>You can now <a href="${BASE_URL}/auth/sign-in">sign in</a> to your account.</p>`;
+	const textEmail = `Thanks for verifying your account with ${APP_NAME}.\nYou can now sign in to your account at the link below.\n\n${BASE_URL}/auth`;
+	const htmlEmail = `<p>Thanks for verifying your account with ${APP_NAME}.</p><p>You can now <a href="${BASE_URL}/auth">sign in</a> to your account.</p>`;
 	const subject = `Welcome to ${APP_NAME}`;
 	const resultSend = sendEmail(email, subject, htmlEmail, textEmail);
 	return resultSend;

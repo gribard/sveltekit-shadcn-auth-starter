@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { DashboardPage, ExamplesNav } from "@/components/docs";
-	import * as PageHeader from "@/components/docs/page-header";
-	import { Icons } from "@/components/docs/icons";
+	import { DashboardPage, ExamplesNav } from "@/components/feedreader";
+	import * as PageHeader from "@/components/feedreader/page-header";
+	import { Icons } from "@/components/feedreader/icons";
 	import { buttonVariants } from "@/registry/new-york/ui/button";
 	import { Separator } from "@/registry/new-york/ui/separator";
 	import { siteConfig } from "$lib/config/site";
@@ -16,14 +16,14 @@
 			class="inline-flex items-center rounded-lg bg-muted px-3 py-1 text-sm font-medium"
 			href="/docs/installation"
 		>
-			🎉<Separator class="mx-2 h-4" orientation="vertical" /> New CLI, Styles,
-			Themes, & Components!
+			🎉<Separator class="mx-2 h-4" orientation="vertical" /> New CLI, Styles, Themes,
+			& Components!
 			<ChevronRight class="ml-1 h-4 w-4" />
 		</a>
 		<PageHeader.Heading>Build your component library.</PageHeader.Heading>
 		<PageHeader.Description>
-			Beautifully designed components that you can copy and paste into
-			your apps. Accessible. Customizable. Open Source.
+			Beautifully designed components that you can copy and paste into your
+			apps. Accessible. Customizable. Open Source.
 		</PageHeader.Description>
 		<p class="text-sm text-orange-700 dark:text-orange-400">
 			This is an unofficial port of <a

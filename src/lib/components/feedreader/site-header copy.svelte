@@ -1,5 +1,10 @@
 <script lang="ts">
-	import { Icons, LightSwitch, MainNav, MobileNav } from "@/components/docs";
+	import {
+		Icons,
+		LightSwitch,
+		MainNav,
+		MobileNav
+	} from "@/components/feedreader";
 	import { buttonVariants } from "@/registry/new-york/ui/button";
 	import { siteConfig } from "$lib/config/site";
 	import { cn } from "$lib/utils";
@@ -27,11 +32,7 @@
 				<!-- Command Menu Here -->
 			</div>
 			<nav class="flex items-center space-x-1">
-				<a
-					href={siteConfig.links.github}
-					target="_blank"
-					rel="noreferrer"
-				>
+				<a href={siteConfig.links.github} target="_blank" rel="noreferrer">
 					<div
 						class={cn(
 							buttonVariants({
@@ -45,11 +46,7 @@
 						<span class="sr-only">GitHub</span>
 					</div>
 				</a>
-				<a
-					href={siteConfig.links.twitter}
-					target="_blank"
-					rel="noreferrer"
-				>
+				<a href={siteConfig.links.twitter} target="_blank" rel="noreferrer">
 					<div
 						class={cn(
 							buttonVariants({
@@ -66,9 +63,7 @@
 				<LightSwitch />
 
 				{#if user}
-					<DropdownMenu.Root
-						positioning={{ placement: "bottom-end" }}
-					>
+					<DropdownMenu.Root positioning={{ placement: "bottom-end" }}>
 						<DropdownMenu.Trigger asChild let:builder>
 							<Button
 								variant="ghost"
@@ -76,10 +71,7 @@
 								class="relative h-8 w-8 rounded-full"
 							>
 								<Avatar.Root class="h-8 w-8">
-									<Avatar.Image
-										src="/avatars/01.png"
-										alt="@shadcn"
-									/>
+									<Avatar.Image src="/avatars/01.png" alt="@shadcn" />
 									<Avatar.Fallback>SC</Avatar.Fallback>
 								</Avatar.Root>
 							</Button>
@@ -91,9 +83,7 @@
 										{user.firstName}
 										{user.lastName}
 									</p>
-									<p
-										class="text-xs leading-none text-muted-foreground"
-									>
+									<p class="text-xs leading-none text-muted-foreground">
 										{user.email}
 									</p>
 								</div>
@@ -102,38 +92,24 @@
 							<DropdownMenu.Group>
 								<DropdownMenu.Item>
 									Profile
-									<DropdownMenu.Shortcut
-										>⇧⌘P</DropdownMenu.Shortcut
-									>
+									<DropdownMenu.Shortcut>⇧⌘P</DropdownMenu.Shortcut>
 								</DropdownMenu.Item>
 								<DropdownMenu.Item>
 									Billing
-									<DropdownMenu.Shortcut
-										>⌘B</DropdownMenu.Shortcut
-									>
+									<DropdownMenu.Shortcut>⌘B</DropdownMenu.Shortcut>
 								</DropdownMenu.Item>
 								<DropdownMenu.Item>
 									Settings
-									<DropdownMenu.Shortcut
-										>⌘S</DropdownMenu.Shortcut
-									>
+									<DropdownMenu.Shortcut>⌘S</DropdownMenu.Shortcut>
 								</DropdownMenu.Item>
 								<DropdownMenu.Item>New Team</DropdownMenu.Item>
 							</DropdownMenu.Group>
 							<DropdownMenu.Separator />
 							<DropdownMenu.Item>
-								<form
-									action="/auth/sign-out"
-									method="post"
-									use:enhance
-								>
-									<button type="submit" class="btn"
-										>{i("signout")}</button
-									>
+								<form action="/auth/sign-out" method="post" use:enhance>
+									<button type="submit" class="btn">{i("signout")}</button>
 								</form>
-								<DropdownMenu.Shortcut
-									>⇧⌘Q</DropdownMenu.Shortcut
-								>
+								<DropdownMenu.Shortcut>⇧⌘Q</DropdownMenu.Shortcut>
 							</DropdownMenu.Item>
 						</DropdownMenu.Content>
 					</DropdownMenu.Root>

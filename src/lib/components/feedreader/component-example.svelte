@@ -1,7 +1,11 @@
 <script lang="ts">
 	import * as Tabs from "@/registry/new-york/ui/tabs";
 	import { cn } from "$lib/utils";
-	import { StyleSwitcher, ThemeWrapper, CopyButton } from "@/components/docs";
+	import {
+		StyleSwitcher,
+		ThemeWrapper,
+		CopyButton
+	} from "@/components/feedreader";
 
 	let codeString: string;
 

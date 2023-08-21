@@ -7,7 +7,7 @@ bits: https://www.bits-ui.com/docs/components/link-preview
 ---
 
 <script>
-  import { ComponentPreview, ManualInstall } from '$lib/components/docs';
+  import { ComponentPreview, ManualInstall } from '$lib/components/feedreader';
 </script>
 
 <ComponentPreview name="hover-card-demo">

@@ -2,7 +2,7 @@
 	import * as Card from "@/registry/default/ui/card";
 	import { Button } from "@/registry/default/ui/button";
 	import { Minus, Plus } from "lucide-svelte";
-	import { Activity } from "@/components/docs/charts";
+	import { Activity } from "@/components/feedreader/charts";
 
 	let goal = 350;
 	function updateGoal(adjustment: number) {

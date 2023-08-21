@@ -4,7 +4,7 @@
 	import { ChevronRight } from "lucide-svelte";
 	import Balancer from "svelte-wrap-balancer";
 	import { page } from "$app/stores";
-	import { DocsPager, TableOfContents } from "$components/docs";
+	import { DocsPager, TableOfContents } from "$components/feedreader";
 	import { Separator } from "@/registry/default/ui/separator";
 	import { cn } from "$lib/utils";
 
@@ -17,12 +17,8 @@
 
 <main class="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
 	<div class="mx-auto w-full min-w-0">
-		<div
-			class="mb-4 flex items-center space-x-1 text-sm text-muted-foreground"
-		>
-			<div class="overflow-hidden text-ellipsis whitespace-nowrap">
-				Docs
-			</div>
+		<div class="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
+			<div class="overflow-hidden text-ellipsis whitespace-nowrap">Docs</div>
 			<ChevronRight class="h-4 w-4" />
 			<div class="font-medium text-foreground">{doc.title}</div>
 		</div>

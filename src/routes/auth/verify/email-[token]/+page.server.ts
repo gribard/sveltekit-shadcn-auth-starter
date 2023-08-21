@@ -1,6 +1,6 @@
-import prisma from '$lib/config/prisma';
-import { fail } from '@sveltejs/kit';
-import { sendWelcomeEmail } from '$lib/config/email-messages';
+import prisma from "$lib/config/prisma";
+import { fail } from "@sveltejs/kit";
+import { sendWelcomeEmail } from "$lib/config/email-messages";
 
 export async function load({ params }) {
 	try {
@@ -13,13 +13,14 @@ export async function load({ params }) {
 				}
 			})
 			.then(async (user) => {
-				let heading = 'Email Verification Problem';
+				let heading = "Email Verification Problem";
 				let message =
-					'Your email could not be verified. Please contact support if you feel this is an error.';
+					"Your email could not be verified. Please contact support if you feel this is an error.";
 				if (user) {
 					sendWelcomeEmail(user.email);
-					heading = 'Email Verified';
-					message = 'Your email has been verified. You can now <a href="/auth/sign-in">sign in</a>';
+					heading = "Email Verified";
+					message =
+						'Your email has been verified. You can now <a href="/auth">sign in</a>';
 					await prisma.authUser.update({
 						where: {
 							token: token

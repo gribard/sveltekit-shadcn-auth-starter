@@ -9,7 +9,9 @@
 		Menu,
 		PodcastEmptyPlaceholder
 	} from "@/components/feedreader";
-	import { playlists } from "$lib/data/playlists";
+		import * as Card from "@/registry/default/ui/card";
+		import { Input } from "@/registry/default/ui/input";
+		import { Label } from "@/registry/default/ui/label";	import { playlists } from "$lib/data/playlists";
 	import { listenNowAlbums, madeForYouAlbums } from "$lib/data/albums";
 	import type { PageData } from "./$types";
 	import FeedPane from "@/components/feedreader/FeedPane/FeedPane.svelte";
@@ -48,6 +50,9 @@
 </div>
 <div class="hidden md:block">
 	<Menu />
+	
+
+	
 	<div class="border-t">
 		<div class="bg-background">
 			<div class="grid lg:grid-cols-12">

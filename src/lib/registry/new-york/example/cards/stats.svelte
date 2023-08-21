@@ -1,6 +1,6 @@
 <script lang="ts">
 	import * as Card from "@/registry/new-york/ui/card";
-	import { Revenue, Subscription } from "@/components/docs/charts";
+	import { Revenue, Subscription } from "@/components/feedreader/charts";
 </script>
 
 <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-2">

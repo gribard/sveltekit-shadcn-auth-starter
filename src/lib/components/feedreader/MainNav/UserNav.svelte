@@ -6,6 +6,7 @@
 	import { LogOut } from "lucide-svelte";
 	import { i } from "@inlang/sdk-js";
 	import { enhance } from "$app/forms";
+	import Search from "./search.svelte";
 
 	export let user: any;
 </script>
@@ -57,7 +58,7 @@
 		<DropdownMenu.Item>
 			<form action="/auth/sign-out" method="post" use:enhance>
 				<button type="submit" class="btn"
-					><span><LogOut /></span><span>{i("signout")}</span></button
+					><span><LogOut /></span><span>{i("signout")}asdasdas</span></button
 				>
 			</form>
 			<DropdownMenu.Shortcut>⇧⌘Q</DropdownMenu.Shortcut>

@@ -3,7 +3,7 @@
 	import { Index as RegistryIndex } from "../../../../__registry__";
 	import { config } from "@/stores";
 	import { cn } from "@/utils";
-	import { StyleSwitcher, ThemeWrapper } from "@/components/docs";
+	import { StyleSwitcher, ThemeWrapper } from "@/components/feedreader";
 	import { Icons } from "./icons";
 	export let name: string;
 	let className: string;
@@ -60,12 +60,8 @@
 				>
 					<slot name="example">
 						{#await component}
-							<div
-								class="flex items-center text-sm text-muted-foreground"
-							>
-								<Icons.spinner
-									class="mr-2 h-4 w-4 animate-spin"
-								/>
+							<div class="flex items-center text-sm text-muted-foreground">
+								<Icons.spinner class="mr-2 h-4 w-4 animate-spin" />
 								Loading...
 							</div>
 						{:then Component}

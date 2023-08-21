@@ -7,7 +7,7 @@ bits: https://www.bits-ui.com/docs/components/select
 ---
 
 <script>
-    import { ComponentPreview, ManualInstall } from '$lib/components/docs'
+    import { ComponentPreview, ManualInstall } from '$lib/components/feedreader'
 </script>
 
 <ComponentPreview name="select-demo">

@@ -3,7 +3,7 @@
 	import { config } from "@/stores";
 	import { themes } from "@/registry";
 	import { Button } from "@/registry/new-york/ui/button";
-	import { ThemeWrapper, CustomizerCode } from "@/components/docs";
+	import { ThemeWrapper, CustomizerCode } from "@/components/feedreader";
 	import { Check, Copy } from "radix-icons-svelte";
 	import { createCopyCodeButton } from "@/utils";
 	const activeTheme = themes.find((theme) => theme.name === $config.theme);

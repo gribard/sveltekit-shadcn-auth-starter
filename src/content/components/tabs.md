@@ -7,7 +7,7 @@ bits: https://www.bits-ui.com/docs/components/tabs
 ---
 
 <script>
-  import { ComponentPreview, ManualInstall } from '$lib/components/docs';
+  import { ComponentPreview, ManualInstall } from '$lib/components/feedreader';
 </script>
 
 <ComponentPreview name="tabs-demo">

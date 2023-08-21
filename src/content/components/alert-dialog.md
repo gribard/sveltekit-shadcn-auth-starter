@@ -8,7 +8,7 @@ bits: https://www.bits-ui.com/docs/components/alert-dialog
 ---
 
 <script>
-  import { ComponentPreview, ManualInstall } from '$components/docs';
+  import { ComponentPreview, ManualInstall } from '$components/feedreader';
 </script>
 
 <ComponentPreview name="alert-dialog-demo">

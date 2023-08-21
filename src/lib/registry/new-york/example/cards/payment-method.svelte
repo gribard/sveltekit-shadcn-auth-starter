@@ -1,7 +1,7 @@
 <script lang="ts">
 	import * as Card from "@/registry/new-york/ui/card";
 	import { Button } from "@/registry/new-york/ui/button";
-	import { Icons } from "$lib/components/docs/icons";
+	import { Icons } from "$lib/components/feedreader/icons";
 	import { Label } from "@/registry/new-york/ui/label";
 	import { Input } from "@/registry/new-york/ui/input";
 	import * as RadioGroup from "@/registry/new-york/ui/radio-group";
@@ -105,9 +105,7 @@
 					</Select.Trigger>
 					<Select.Content>
 						{#each months as month, i}
-							<Select.Item value={i + 1} label={month}
-								>{month}</Select.Item
-							>
+							<Select.Item value={i + 1} label={month}>{month}</Select.Item>
 						{/each}
 					</Select.Content>
 				</Select.Root>

@@ -21,7 +21,7 @@
 		th,
 		tr,
 		ul
-	} from "$components/docs/mdsvex";
+	} from "$components/feedreader/mdsvex";
 
 	export {
 		a,
