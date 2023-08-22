@@ -12,17 +12,16 @@
 
 	export let data;
 
-	const signInSchema = userSchema.pick({ email: true, password: true });
-	const { form, errors, enhance, delayed } = superForm(data.signinForm, {
+	const resetPasswordSchema = userSchema.pick({ email: true });
+	const { form, errors, enhance, delayed, message } = superForm(data.form, {
 		taintedMessage: null,
-		validators: signInSchema,
+		validators: resetPasswordSchema,
 		delayMs: 0
 	});
 
 	import { Icons } from "$components/feedreader";
 	import { cn } from "$lib/utils";
 
-	let termsAccept = false;
 	// $: termsValue = $form.terms as Writable<boolean>;
 
 	let className: string | undefined | null = undefined;
@@ -38,7 +37,7 @@
 	}
 </script>
 
-<form method="POST" action="/auth?/signin" use:enhance>
+<form method="POST" use:enhance>
 	<!-- on:submit|preventDefault={onSubmit} -->
 	<Card.Root>
 		<Card.Header>
@@ -58,13 +57,14 @@
 				</aside>
 			{/if}
 			<div class="flex flex-col space-y-2 text-center">
-				<h1 class="text-2xl font-semibold tracking-tight">Sign in</h1>
+				<h1 class="text-2xl font-semibold tracking-tight">
+					{i("auth.password.reset.sendResetEmail")}
+				</h1>
 				<p class="text-sm text-muted-foreground">
-					Enter your email below to sign in.
+					Enter your email below to reset your password.
 				</p>
 			</div>
 			<div class={cn("grid gap-6", className)} {...$$restProps}>
-				<!-- <form on:submit|preventDefault={onSubmit}> -->
 				<div class="grid gap-2">
 					<div class="grid gap-1 mt-6">
 						<label
@@ -89,28 +89,13 @@
 								<small>{$errors.email}</small>
 							{/if}
 						</label>
+						{#if $message}
+							<div class="message text-lime-600 dark:text-lime-300">
+								<small>{$message}</small>
+							</div>
+						{/if}
 					</div>
-					<div class="grid gap-1 mb-3">
-						<label
-							class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-						>
-							<span class="sr-only">{i("password")}</span>
-							<input
-								id="password"
-								name="password"
-								type="password"
-								placeholder={i("password")}
-								data-invalid={$errors.password}
-								bind:value={$form.password}
-								class="flex h-9 w-full rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
-								class:input-error={$errors.password}
-							/>
-							{#if $errors.password}
-								<small>{$errors.password}</small>
-							{/if}
-						</label>
-						<input hidden name="type" value="signin" />
-					</div>
+
 					<Button
 						disabled={isLoading}
 						type="submit"
@@ -122,57 +107,12 @@
 						{#if $delayed}
 							<Loader />
 						{:else}
-							{i("signin")}
+							{i("auth.password.reset.sendResetEmail")}
 						{/if}
 					</Button>
-					<div class="flex flex-row justify-center items-center">
-						<a href="/auth/password/reset" class="font-semibold"
-							>{i("forgotPassword")}</a
-						>
-					</div>
 				</div>
-
-				<div class="relative">
-					<div class="absolute inset-0 flex items-center">
-						<span class="w-full border-t" />
-					</div>
-					<div class="relative flex justify-center text-xs uppercase">
-						<span class="bg-background px-2 text-muted-foreground">
-							Or continue with
-						</span>
-					</div>
-				</div>
-				<Button variant="outline" type="button" disabled={isLoading}>
-					{#if isLoading}
-						<Icons.spinner class="mr-2 h-4 w-4 animate-spin" />
-					{:else}
-						<Icons.gitHub class="mr-2 h-4 w-4" />
-					{/if}
-					{" "}
-					Github
-				</Button>
 			</div>
-
-			<p class="px-8 text-center text-sm text-muted-foreground">
-				By clicking continue, you agree to our{" "}
-				<a
-					href="/terms"
-					class="underline underline-offset-4 hover:text-primary"
-				>
-					Terms of Service
-				</a>{" "}
-				and{" "}
-				<a
-					href="/privacy"
-					class="underline underline-offset-4 hover:text-primary"
-				>
-					Privacy Policy
-				</a>
-				.
-			</p>
 		</Card.Content>
-		<Card.Footer>
-			<!-- <Button>Sign up</Button> -->
-		</Card.Footer>
+		<Card.Footer />
 	</Card.Root>
 </form>

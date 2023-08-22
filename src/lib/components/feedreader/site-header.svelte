@@ -39,12 +39,12 @@
 			<div class="w-full flex-1 md:w-auto md:flex-none">
 				<!-- Command Menu Here -->
 				<Select.Root bind:value={selectedLanguage} onValueChange={switchLang}>
-					<Select.Trigger class="w-[180px]">
-						<Select.Value placeholder="Select a language" />
+					<Select.Trigger class="w-[100px]">
+						<Select.Value placeholder="Language" />
 					</Select.Trigger>
 					<Select.Content>
 						<Select.Group>
-							<Select.Label>Languages</Select.Label>
+							<!-- <Select.Label>Languages</Select.Label> -->
 							{#each languages as lang}
 								<Select.Item value={lang} label={lang}>{lang}</Select.Item>
 							{/each}

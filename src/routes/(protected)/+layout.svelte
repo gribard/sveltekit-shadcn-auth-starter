@@ -15,12 +15,9 @@
 	};
 </script>
 
-<div class="flex flex-col justify-center px-6 py-12 lg:px-8 mx-auto max-w-2xl">
-	<div class="card p-6 pb-8 pt-8">
-		<div>
-			<h1>Restricted Area</h1>
-			<p>User Email: {data.user.email}</p>
-			<slot />
-		</div>
+<div class="flex flex-col justify-center px-6 py-12 lg:px-8 mx-auto">
+	<div class="mx-auto">
+		<pre>(protected) area. user email: {data.user.email}</pre>
 	</div>
+	<slot />
 </div>

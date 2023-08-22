@@ -1,8 +1,8 @@
-import { fail, redirect } from '@sveltejs/kit';
-import { setError, superValidate } from 'sveltekit-superforms/server';
-import { userUpdatePasswordSchema } from '$lib/config/zod-schemas';
-import { auth } from '$lib/server/lucia';
-import prisma from '$lib/config/prisma';
+import { fail, redirect } from "@sveltejs/kit";
+import { setError, superValidate } from "sveltekit-superforms/server";
+import { userUpdatePasswordSchema } from "$lib/config/zod-schemas";
+import { auth } from "$lib/server/lucia";
+import prisma from "$lib/config/prisma";
 
 export const load = async (event) => {
 	const form = await superValidate(event, userUpdatePasswordSchema);
@@ -25,7 +25,7 @@ export const actions = {
 		//add user to db
 		try {
 			const token = event.params.token as string;
-			console.log('update user password');
+			console.log("update user password");
 			const newToken = crypto.randomUUID();
 			//get email from token
 			const user = await prisma.authUser.findUnique({
@@ -35,7 +35,11 @@ export const actions = {
 			});
 
 			if (user?.email) {
-				await auth.updateKeyPassword('emailpassword', user.email, form.data.password);
+				await auth.updateKeyPassword(
+					"emailpassword",
+					user.email,
+					form.data.password
+				);
 				// need to update with new token because token is also used for verification
 				// and needs a new verification token in case user has not verified their account
 				// and already forgot their password before verifying. Now they can get a new one resent.
@@ -51,7 +55,7 @@ export const actions = {
 				return setError(
 					form,
 					null,
-					'Email address not found for this token. Please contact support if you need further help.'
+					"Email address not found for this token. Please contact support if you need further help."
 				);
 			}
 		} catch (e) {
@@ -59,7 +63,7 @@ export const actions = {
 			return setError(
 				form,
 				null,
-				'The was a problem resetting your password. Please contact support if you need further help.'
+				"There was a problem resetting your password. Please contact support if you need further help."
 			);
 		}
 		const token = event.params.token as string;

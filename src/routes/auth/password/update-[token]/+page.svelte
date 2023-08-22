@@ -1,21 +1,15 @@
 <script lang="ts">
-	import { ConicGradient } from '@skeletonlabs/skeleton';
-	import type { ConicStop } from '@skeletonlabs/skeleton';
-	import { superForm } from 'sveltekit-superforms/client';
+	import { superForm } from "sveltekit-superforms/client";
 	//import SuperDebug from 'sveltekit-superforms/client/SuperDebug.svelte';
-	import { userUpdatePasswordSchema } from '$lib/config/zod-schemas';
-	import { AlertTriangle } from 'lucide-svelte';
-	import { i } from '@inlang/sdk-js';
+	import { userUpdatePasswordSchema } from "$lib/config/zod-schemas";
+	import { AlertTriangle, Loader } from "lucide-svelte";
+	import { i } from "@inlang/sdk-js";
 	export let data;
 	const { form, errors, enhance, delayed } = superForm(data.form, {
 		taintedMessage: null,
 		validators: userUpdatePasswordSchema,
 		delayMs: 0
 	});
-	const conicStops: ConicStop[] = [
-		{ color: 'transparent', start: 0, end: 25 },
-		{ color: 'rgb(var(--color-primary-900))', start: 75, end: 100 }
-	];
 </script>
 
 <h3>{i("auth.password.update.changePassword")}</h3>
@@ -74,7 +68,9 @@
 
 	<div class="mt-6">
 		<button type="submit" class="btn variant-filled-primary w-full"
-			>{#if $delayed}<ConicGradient stops={conicStops} spin width="w-6" />{:else}{i("auth.password.update.updatePassword")}{/if}</button
+			>{#if $delayed}
+				<Loader />
+			{:else}{i("auth.password.update.updatePassword")}{/if}</button
 		>
 	</div>
 </form>

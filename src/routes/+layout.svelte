@@ -40,9 +40,7 @@
 
 <div class="relative flex min-h-screen flex-col" id="page">
 	<SiteHeader user={data?.user} />
-	<div class="flex-1">
-		<slot />
-	</div>
+	<slot />
 	<SiteFooter />
 	{#if dev}
 		<TailwindIndicator />

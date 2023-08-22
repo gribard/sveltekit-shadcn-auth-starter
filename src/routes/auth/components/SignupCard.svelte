@@ -50,7 +50,7 @@
 		</Card.Header>
 		<Card.Content class="grid gap-4">
 			<div class="flex flex-col space-y-2 text-center">
-				<h1 class="text-2xl font-semibold tracking-tight">Sign up</h1>
+				<h1 class="text-2xl font-semibold tracking-tight">{i("signup")}</h1>
 				<p class="text-sm text-muted-foreground">
 					Enter your email below to create your account
 				</p>
@@ -80,7 +80,7 @@
 							class:input-error={$errors.firstName}
 						/>
 						{#if $errors.firstName}
-							<small>{$errors.firstName}</small>
+							<small class="text-amber-500 pl-2">{$errors.firstName}</small>
 						{/if}
 					</label>
 				</div>
@@ -107,7 +107,7 @@
 							class:input-error={$errors.lastName}
 						/>
 						{#if $errors.lastName}
-							<small>{$errors.lastName}</small>
+							<small class="text-amber-500 pl-2">{$errors.lastName}</small>
 						{/if}
 					</label>
 				</div>
@@ -135,7 +135,7 @@
 							class:input-error={$errors.email}
 						/>
 						{#if $errors.email}
-							<small>{$errors.email}</small>
+							<small class="text-amber-500 pl-2">{$errors.email}</small>
 						{/if}
 					</label>
 				</div>
@@ -161,7 +161,7 @@
 							class:input-error={$errors.password}
 						/>
 						{#if $errors.password}
-							<small>{$errors.password}</small>
+							<small class="text-amber-500 pl-2">{$errors.password}</small>
 						{/if}
 					</label>
 				</div>
