@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { ExamplesNav } from "$components/feedreader";
-	import * as PageHeader from "@/components/feedreader/page-header";
+	import { ExamplesNav } from "$components/docs";
+	import * as PageHeader from "@/components/docs/page-header";
 	import { Button } from "@/registry/default/ui/button";
 </script>
 

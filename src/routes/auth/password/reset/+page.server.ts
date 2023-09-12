@@ -44,7 +44,7 @@ export const actions = {
 			return setError(
 				form,
 				null,
-				"The was a problem resetting your password. Please contact support if you need further help."
+				"There was a problem resetting your password. Please contact support if you need further help."
 			);
 		}
 		// throw redirect(302, '/auth/password/reset/success');

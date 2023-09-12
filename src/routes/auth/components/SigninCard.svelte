@@ -19,7 +19,7 @@
 		delayMs: 0
 	});
 
-	import { Icons } from "$components/feedreader";
+	import { Icons } from "$components/docs";
 	import { cn } from "$lib/utils";
 
 	let termsAccept = false;
@@ -47,13 +47,13 @@
 		</Card.Header>
 		<Card.Content class="space-y-2">
 			{#if $errors._errors}
-				<aside class="alert variant-filled-error mt-6">
+				<aside class="alert variant-filled-error mt-6 content-center">
 					<!-- Icon -->
-					<div><AlertTriangle size="42" /></div>
 					<!-- Message -->
 					<div class="alert-message">
+						<AlertTriangle size="42" class="mx-auto" />
 						<h3 class="h3">{i("signinProblem")}</h3>
-						<p>{$errors._errors}</p>
+						<p class="text-red-600">{$errors._errors}</p>
 					</div>
 				</aside>
 			{/if}
@@ -65,7 +65,7 @@
 			</div>
 			<div class={cn("grid gap-6", className)} {...$$restProps}>
 				<!-- <form on:submit|preventDefault={onSubmit}> -->
-				<div class="grid gap-2">
+				<div class="grid gap-4">
 					<div class="grid gap-1 mt-6">
 						<label
 							class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
@@ -86,7 +86,7 @@
 								disabled={isLoading}
 							/>
 							{#if $errors.email}
-								<small>{$errors.email}</small>
+								<small class="text-red-600 pl-2">{$errors.email}</small>
 							{/if}
 						</label>
 					</div>
@@ -106,7 +106,7 @@
 								class:input-error={$errors.password}
 							/>
 							{#if $errors.password}
-								<small>{$errors.password}</small>
+								<small class="text-red-600 pl-2">{$errors.password}</small>
 							{/if}
 						</label>
 						<input hidden name="type" value="signin" />

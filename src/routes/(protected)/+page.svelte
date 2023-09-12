@@ -1,5 +1,5 @@
 <script>
-	import ContentPane from "$components/feedreader/ContentPane/ContentPane.svelte";
+	import ContentPane from "$components/docs/ContentPane/ContentPane.svelte";
 	export let item;
 </script>
 

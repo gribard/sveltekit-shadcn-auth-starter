@@ -26,31 +26,27 @@
 	<ul class="list mt-8">
 		<li>
 			<a href="/">
-				<span><Logo size="24" /></span><span class="flex-auto"
-					>{i("home")}</span
+				<span><Logo size="24" /></span><span class="flex-auto">{i("home")}</span
 				></a
 			>
 		</li>
 		<li>
 			<a href="/dashboard">
-				<span><Lock /></span><span class="flex-auto"
-					>{i("protected")}</span
-				></a
+				<span><Lock /></span><span class="flex-auto">{i("protected")}</span></a
 			>
 		</li>
 		{#if user}
 			<li>
 				<a href="/profile">
 					<span><Contact2 /></span><span class="flex-auto"
-						>{i("profile")}</span
+						>{i("profile.menutitle")}</span
 					></a
 				>
 			</li>
 			<li>
 				<form use:enhance action="/auth/sign-out" method="post">
 					<button type="submit" class="btn"
-						><span><LogOut /></span><span>{i("signout")}</span
-						></button
+						><span><LogOut /></span><span>{i("signout")}</span></button
 					>
 				</form>
 			</li>
@@ -58,9 +54,7 @@
 		{#if !user}
 			<li>
 				<a href="/auth/sign-in">
-					<span><LogIn /></span><span class="flex-auto"
-						>{i("signin")}</span
-					></a
+					<span><LogIn /></span><span class="flex-auto">{i("signin")}</span></a
 				>
 			</li>
 			<li>

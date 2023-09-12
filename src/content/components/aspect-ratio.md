@@ -7,7 +7,7 @@ bits: https://www.bits-ui.com/docs/components/aspect-ratio
 ---
 
 <script>
-  import { ComponentPreview, ManualInstall } from '$components/feedreader';
+  import { ComponentPreview, ManualInstall } from '$components/docs';
 </script>
 
 <ComponentPreview name="aspect-ratio-demo">

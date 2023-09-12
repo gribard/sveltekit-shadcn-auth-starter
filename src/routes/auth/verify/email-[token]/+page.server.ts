@@ -1,10 +1,14 @@
 import prisma from "$lib/config/prisma";
-import { fail } from "@sveltejs/kit";
+import { fail, redirect } from "@sveltejs/kit";
 import { sendWelcomeEmail } from "$lib/config/email-messages";
 
-export async function load({ params }) {
+export async function load(event) {
+	const { user } = await event.locals.auth.validateUser();
+	if (!user) throw redirect(302, "/auth");
+	if (user.verified) throw redirect(302, "/dashboard");
+
 	try {
-		const token = params.token as string;
+		const token = event.params.token as string;
 
 		const result = await prisma.authUser
 			.findUnique({

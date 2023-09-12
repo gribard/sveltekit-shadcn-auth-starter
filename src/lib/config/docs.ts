@@ -9,11 +9,11 @@ export const docsConfig: DocsConfig = {
 	mainNav: [
 		{
 			title: "Documentation",
-			href: "/feedreader"
+			href: "/docs"
 		},
 		{
 			title: "Components",
-			href: "/feedreader/components/accordion"
+			href: "/docs/components/accordion"
 		},
 		{
 			title: "Themes",
@@ -35,42 +35,42 @@ export const docsConfig: DocsConfig = {
 			items: [
 				{
 					title: "Introduction",
-					href: "/feedreader",
+					href: "/docs",
 					items: []
 				},
 				{
 					title: "Installation",
-					href: "/feedreader/installation",
+					href: "/docs/installation",
 					items: []
 				},
 				{
 					title: "components.json",
-					href: "/feedreader/components-json",
+					href: "/docs/components-json",
 					items: []
 				},
 				{
 					title: "Theming",
-					href: "/feedreader/theming",
+					href: "/docs/theming",
 					items: []
 				},
 				{
 					title: "CLI",
-					href: "/feedreader/cli",
+					href: "/docs/cli",
 					items: []
 				},
 				{
 					title: "Typography",
-					href: "/feedreader/typography",
+					href: "/docs/typography",
 					items: []
 				},
 				{
 					title: "Figma",
-					href: "/feedreader/figma",
+					href: "/docs/figma",
 					items: []
 				},
 				{
 					title: "About",
-					href: "/feedreader/about",
+					href: "/docs/about",
 					items: []
 				}
 			]
@@ -80,37 +80,37 @@ export const docsConfig: DocsConfig = {
 			items: [
 				{
 					title: "Accordion",
-					href: "/feedreader/components/accordion",
+					href: "/docs/components/accordion",
 					items: []
 				},
 				{
 					title: "Alert",
-					href: "/feedreader/components/alert",
+					href: "/docs/components/alert",
 					items: []
 				},
 				{
 					title: "Alert Dialog",
-					href: "/feedreader/components/alert-dialog",
+					href: "/docs/components/alert-dialog",
 					items: []
 				},
 				{
 					title: "Aspect Ratio",
-					href: "/feedreader/components/aspect-ratio",
+					href: "/docs/components/aspect-ratio",
 					items: []
 				},
 				{
 					title: "Avatar",
-					href: "/feedreader/components/avatar",
+					href: "/docs/components/avatar",
 					items: []
 				},
 				{
 					title: "Badge",
-					href: "/feedreader/components/badge",
+					href: "/docs/components/badge",
 					items: []
 				},
 				{
 					title: "Button",
-					href: "/feedreader/components/button",
+					href: "/docs/components/button",
 					items: []
 				},
 				// {
@@ -122,17 +122,17 @@ export const docsConfig: DocsConfig = {
 				// },
 				{
 					title: "Card",
-					href: "/feedreader/components/card",
+					href: "/docs/components/card",
 					items: []
 				},
 				{
 					title: "Checkbox",
-					href: "/feedreader/components/checkbox",
+					href: "/docs/components/checkbox",
 					items: []
 				},
 				{
 					title: "Collapsible",
-					href: "/feedreader/components/collapsible",
+					href: "/docs/components/collapsible",
 					items: []
 				},
 				{
@@ -151,12 +151,12 @@ export const docsConfig: DocsConfig = {
 				// },
 				{
 					title: "Context Menu",
-					href: "/feedreader/components/context-menu",
+					href: "/docs/components/context-menu",
 					items: []
 				},
 				{
 					title: "Data Table",
-					href: "/feedreader/components/data-table",
+					href: "/docs/components/data-table",
 					label: "Preview",
 					items: []
 				},
@@ -169,12 +169,12 @@ export const docsConfig: DocsConfig = {
 				// },
 				{
 					title: "Dialog",
-					href: "/feedreader/components/dialog",
+					href: "/docs/components/dialog",
 					items: []
 				},
 				{
 					title: "Dropdown Menu",
-					href: "/feedreader/components/dropdown-menu",
+					href: "/docs/components/dropdown-menu",
 					items: []
 				},
 				{
@@ -186,22 +186,22 @@ export const docsConfig: DocsConfig = {
 				},
 				{
 					title: "Hover Card",
-					href: "/feedreader/components/hover-card",
+					href: "/docs/components/hover-card",
 					items: []
 				},
 				{
 					title: "Input",
-					href: "/feedreader/components/input",
+					href: "/docs/components/input",
 					items: []
 				},
 				{
 					title: "Label",
-					href: "/feedreader/components/label",
+					href: "/docs/components/label",
 					items: []
 				},
 				{
 					title: "Menubar",
-					href: "/feedreader/components/menubar",
+					href: "/docs/components/menubar",
 					items: []
 				},
 				// {
@@ -213,17 +213,17 @@ export const docsConfig: DocsConfig = {
 				// },
 				{
 					title: "Popover",
-					href: "/feedreader/components/popover",
+					href: "/docs/components/popover",
 					items: []
 				},
 				{
 					title: "Progress",
-					href: "/feedreader/components/progress",
+					href: "/docs/components/progress",
 					items: []
 				},
 				{
 					title: "Radio Group",
-					href: "/feedreader/components/radio-group",
+					href: "/docs/components/radio-group",
 					items: []
 				},
 				// {
@@ -235,47 +235,47 @@ export const docsConfig: DocsConfig = {
 				// },
 				{
 					title: "Select",
-					href: "/feedreader/components/select",
+					href: "/docs/components/select",
 					items: []
 				},
 				{
 					title: "Separator",
-					href: "/feedreader/components/separator",
+					href: "/docs/components/separator",
 					items: []
 				},
 				{
 					title: "Sheet",
-					href: "/feedreader/components/sheet",
+					href: "/docs/components/sheet",
 					items: []
 				},
 				{
 					title: "Skeleton",
-					href: "/feedreader/components/skeleton",
+					href: "/docs/components/skeleton",
 					items: []
 				},
 				{
 					title: "Slider",
-					href: "/feedreader/components/slider",
+					href: "/docs/components/slider",
 					items: []
 				},
 				{
 					title: "Switch",
-					href: "/feedreader/components/switch",
+					href: "/docs/components/switch",
 					items: []
 				},
 				{
 					title: "Table",
-					href: "/feedreader/components/table",
+					href: "/docs/components/table",
 					items: []
 				},
 				{
 					title: "Tabs",
-					href: "/feedreader/components/tabs",
+					href: "/docs/components/tabs",
 					items: []
 				},
 				{
 					title: "Textarea",
-					href: "/feedreader/components/textarea",
+					href: "/docs/components/textarea",
 					items: []
 				},
 				// {
@@ -287,12 +287,12 @@ export const docsConfig: DocsConfig = {
 				// },
 				{
 					title: "Toggle",
-					href: "/feedreader/components/toggle",
+					href: "/docs/components/toggle",
 					items: []
 				},
 				{
 					title: "Tooltip",
-					href: "/feedreader/components/tooltip",
+					href: "/docs/components/tooltip",
 					items: []
 				}
 			]
@@ -310,7 +310,7 @@ export const examples: Example[] = [
 	{
 		name: "Dashboard",
 		href: "/examples/dashboard",
-		code: "https://github.com/huntabyte/shadcn-svelte/tree/main/apps/www/src/lib/components/feedreader/dashboard"
+		code: "https://github.com/huntabyte/shadcn-svelte/tree/main/apps/www/src/lib/components/docs/dashboard"
 	},
 	{
 		name: "Cards",
@@ -331,11 +331,6 @@ export const examples: Example[] = [
 	{
 		name: "Music",
 		href: "/examples/music",
-		code: "https://github.com/huntabyte/shadcn-svelte/tree/main/apps/www/apps/www/app/examples/music"
-	},
-	{
-		name: "Feed Reader",
-		href: "/examples/feedreader",
 		code: "https://github.com/huntabyte/shadcn-svelte/tree/main/apps/www/apps/www/app/examples/music"
 	},
 	{

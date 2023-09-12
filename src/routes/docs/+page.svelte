@@ -4,7 +4,7 @@
 	import { ChevronRight } from "lucide-svelte";
 	import Balancer from "svelte-wrap-balancer";
 	import { page } from "$app/stores";
-	import { DocsPager, TableOfContents } from "$components/feedreader";
+	import { DocsPager, TableOfContents } from "$components/docs";
 	import { Separator } from "@/registry/default/ui/separator";
 	import { cn } from "$lib/utils";
 

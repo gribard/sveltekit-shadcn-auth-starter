@@ -28,7 +28,7 @@ const signUpSchema = userSchema.pick({
 export const load = async (event) => {
 	const session = await event.locals.auth.validate();
 
-	if (session) throw redirect(302, "/");
+	if (session) throw redirect(302, "/dashboard");
 
 	// Different schemas, so no id required.
 	const signupForm = await superValidate(event, signInSchema);

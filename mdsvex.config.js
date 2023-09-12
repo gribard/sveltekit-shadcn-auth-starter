@@ -19,7 +19,7 @@ export const mdsvexOptions = {
 	extensions: [".md"],
 	layout: path.resolve(
 		__dirname,
-		"./src/lib/components/feedreader/mdsvex/mdsvex.svelte"
+		"./src/lib/components/docs/mdsvex/mdsvex.svelte"
 	),
 	smartypants: {
 		quotes: false,

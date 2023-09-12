@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { DocsSidebarNav } from "$components/feedreader";
-	import { docsConfig } from "$lib/config/feedreader";
+	import { DocsSidebarNav } from "$components/docs";
+	import { docsConfig } from "$lib/config/docs";
 </script>
 
 <div class="border-b">

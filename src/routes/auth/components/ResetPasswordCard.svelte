@@ -19,7 +19,7 @@
 		delayMs: 0
 	});
 
-	import { Icons } from "$components/feedreader";
+	import { Icons } from "$components/docs";
 	import { cn } from "$lib/utils";
 
 	// $: termsValue = $form.terms as Writable<boolean>;

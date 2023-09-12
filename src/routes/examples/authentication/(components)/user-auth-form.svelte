@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Icons } from "$components/feedreader";
+	import { Icons } from "$components/docs";
 	import { Button } from "@/registry/new-york/ui/button";
 	import { Input } from "@/registry/new-york/ui/input";
 	import { Label } from "@/registry/new-york/ui/label";

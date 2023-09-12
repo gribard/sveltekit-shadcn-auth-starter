@@ -1,9 +1,5 @@
 <script lang="ts">
-	import { Button } from "@/registry/default/ui/button";
 	import * as Tabs from "@/registry/default/ui/tabs";
-
-	export let data;
-
 	import SigninCard from "./components/SigninCard.svelte";
 	import SignupCard from "./components/SignupCard.svelte";
 	import { i } from "@inlang/sdk-js";
@@ -16,6 +12,8 @@
 			isLoading = false;
 		}, 3000);
 	}
+
+	export let data;
 </script>
 
 <div class="mx-auto p-10">

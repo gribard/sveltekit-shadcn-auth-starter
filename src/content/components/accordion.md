@@ -7,7 +7,7 @@ bits: https://www.bits-ui.com/docs/components/accordion
 ---
 
 <script>
-    import { ComponentPreview, ManualInstall } from '$components/feedreader';
+    import { ComponentPreview, ManualInstall } from '$components/docs';
     import { AccordionDemo } from '@/registry/default/example'
 </script>
 

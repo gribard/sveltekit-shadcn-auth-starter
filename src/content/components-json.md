@@ -4,7 +4,7 @@ description: Configuration for your project.
 ---
 
 <script>
-    import { Callout, ComponentPreview } from '@/components/feedreader'
+    import { Callout, ComponentPreview } from '@/components/docs'
 </script>
 
 The `components.json` file holds configuration for your project.

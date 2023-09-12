@@ -6,7 +6,7 @@
 	import { ChevronRight, Code } from "radix-icons-svelte";
 	import Balancer from "svelte-wrap-balancer";
 	import { page } from "$app/stores";
-	import { DocsPager, TableOfContents } from "$components/feedreader";
+	import { DocsPager, TableOfContents } from "$components/docs";
 	import { badgeVariants } from "@/registry/new-york/ui/badge";
 	import { Separator } from "@/registry/new-york/ui/separator";
 	import { cn } from "$lib/utils";

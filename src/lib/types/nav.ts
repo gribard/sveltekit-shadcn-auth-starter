@@ -1,4 +1,4 @@
-import type { Icons } from "$components/feedreader/icons";
+import type { Icons } from "$components/docs/icons";
 
 export type NavItem = {
 	title: string;

@@ -7,7 +7,7 @@ bits: https://www.bits-ui.com/docs/components/avatar
 ---
 
 <script>
-  import { ComponentPreview, ManualInstall } from '$lib/components/feedreader';
+  import { ComponentPreview, ManualInstall } from '$lib/components/docs';
 </script>
 
 <ComponentPreview name="avatar-demo">

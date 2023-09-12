@@ -5,7 +5,7 @@ description: How to install dependencies and structure your app.
 
 <script>
   import { Alert, AlertDescription } from "@/registry/default/ui/alert";
-  import { Steps } from "$components/feedreader";
+  import { Steps } from "$components/docs";
 </script>
 
 Unlike the original [shadcn/ui](https://ui.shadcn.com) for React, where the full components can exist in a single file, components in this port are split into multiple files. This is because Svelte doesn't support defining multiple components in a single file, so utilizing the CLI to add components will be the optimal approach.

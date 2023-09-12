@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { ThemeCustomizer, ThemeWrapper } from "@/components/feedreader";
-	import * as PageHeader from "@/components/feedreader/page-header";
+	import { ThemeCustomizer, ThemeWrapper } from "@/components/docs";
+	import * as PageHeader from "@/components/docs/page-header";
 	import { CardsNewYork } from "@/registry/new-york/example/cards";
 	import { CardsDefault } from "@/registry/default/example/cards";
 	import { config } from "@/stores";

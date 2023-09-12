@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { DashboardPage } from "$components/feedreader";
+	import { DashboardPage } from "$components/docs";
 </script>
 
 <DashboardPage />

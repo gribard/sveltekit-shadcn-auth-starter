@@ -8,7 +8,7 @@ bits: https://www.bits-ui.com/docs/components/button
 ---
 
 <script>
-  import { ComponentPreview, ManualInstall } from '$lib/components/feedreader';
+  import { ComponentPreview, ManualInstall } from '$lib/components/docs';
 </script>
 
 <ComponentPreview name="button-demo">

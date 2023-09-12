@@ -6,18 +6,18 @@
 		SiteFooter,
 		SiteHeader,
 		TailwindIndicator
-	} from "$components/feedreader";
+	} from "$components/docs";
+	// import TestSiteHeader from "./TestSiteHeader.svelte";
 	import { updateTheme } from "@/utils";
 	import "../styles/globals.css";
 	import { config } from "@/stores";
-	import type { PageData } from "./$types";
 	import convertNameToInitials from "$lib/_helpers/convertNameToInitials";
 	import { onMount } from "svelte";
-	import UserNav from "$components/feedreader/user/UserNav.svelte";
-	$: updateTheme($config.theme, $page.url.pathname);
+
+	import type { PageData } from "./$types";
 	export let data: PageData;
-	import { i } from "@inlang/sdk-js";
-	import MainNav from "$components/feedreader/MainNav.svelte";
+
+	$: updateTheme($config.theme, $page.url.pathname);
 
 	//console.log(JSON.stringify(data));
 	let initials = "";

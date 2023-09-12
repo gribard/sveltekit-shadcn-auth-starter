@@ -1,12 +1,10 @@
 <script lang="ts">
+	import DashboardComponent from "./DashboardComponent.svelte";
+	import ContentPane from "./DashboardComponent.svelte";
 	export let data;
+	console.dir(data?.user.firstName);
 </script>
 
-<div class="flex flex-row justify-center items-center mb-4">
-	<h2>Protected Area</h2>
+<div class="w-full flex">
+	<DashboardComponent />
 </div>
-<p>User info from dashboard/+page.svelte <b>{data?.user?.email} </b></p>
-
-<hr class="!border-t-2 mt-2 mb-6" />
-
-<p>If you are seeing this page, you are logged in.</p>

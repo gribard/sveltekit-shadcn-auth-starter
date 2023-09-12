@@ -11,10 +11,12 @@
 
 	export let data;
 
-	import { Icons } from "$components/feedreader";
+	import { Icons } from "$components/docs";
 	import { cn } from "$lib/utils";
 	import { Label } from "@/registry/default/ui/label";
 	import { Input } from "@/registry/default/ui/input";
+	import { Checkbox } from "$lib/registry/default/ui/checkbox";
+	let checked = false;
 
 	const signUpSchema = userSchema.pick({
 		firstName: true,
@@ -80,7 +82,7 @@
 							class:input-error={$errors.firstName}
 						/>
 						{#if $errors.firstName}
-							<small class="text-amber-500 pl-2">{$errors.firstName}</small>
+							<small class="text-red-600 pl-2">{$errors.firstName}</small>
 						{/if}
 					</label>
 				</div>
@@ -107,7 +109,7 @@
 							class:input-error={$errors.lastName}
 						/>
 						{#if $errors.lastName}
-							<small class="text-amber-500 pl-2">{$errors.lastName}</small>
+							<small class="text-red-600 pl-2">{$errors.lastName}</small>
 						{/if}
 					</label>
 				</div>
@@ -135,7 +137,7 @@
 							class:input-error={$errors.email}
 						/>
 						{#if $errors.email}
-							<small class="text-amber-500 pl-2">{$errors.email}</small>
+							<small class="text-red-600 pl-2">{$errors.email}</small>
 						{/if}
 					</label>
 				</div>
@@ -161,34 +163,36 @@
 							class:input-error={$errors.password}
 						/>
 						{#if $errors.password}
-							<small class="text-amber-500 pl-2">{$errors.password}</small>
+							<small class="text-red-600 pl-2">{$errors.password}</small>
 						{/if}
 					</label>
 				</div>
 				<div class="grid gap-2">
-					<label
-						for="terms"
-						class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-					>
-						<input
+					<div class="flex items-center space-x-2">
+						<Checkbox
 							id="terms"
 							name="terms"
-							type="checkbox"
 							class="checkbox"
 							bind:checked={termsAccept}
+							aria-labelledby="terms-label"
 						/>
-						<span class="ml-2">
-							I accept the
-							<a href="/terms" class="text-primaryHover underline">terms</a>
-							and
-							<a href="/privacy" class="text-primaryHover underline"
-								>privacy policy</a
-							>
-							<!--{#if $errors.terms}
-												<small>{$errors.terms}</small>
-											{/if}-->
-						</span>
-					</label>
+						<Label
+							id="terms-label"
+							for="terms"
+							class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+							><span class="ml-1">
+								I accept the
+								<a href="/terms" class="text-primaryHover underline">terms</a>
+								and
+								<a href="/privacy" class="text-primaryHover underline"
+									>privacy policy</a
+								>
+								<!--{#if $errors.terms}
+											<small>{$errors.terms}</small>
+										{/if}-->
+							</span>
+						</Label>
+					</div>
 				</div>
 
 				<div class="grid pt-4">

@@ -5,7 +5,7 @@ component: true
 ---
 
 <script>
-  import {  ComponentPreview } from "$components/feedreader"
+  import {  ComponentPreview } from "$components/docs"
 </script>
 
 <ComponentPreview name="typography-demo">
