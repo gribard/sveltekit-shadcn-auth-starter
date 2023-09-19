@@ -25,7 +25,7 @@ export const docsConfig: DocsConfig = {
 		},
 		{
 			title: "GitHub",
-			href: "https://github.com/huntabyte/shadcn-svelte",
+			href: "https://github.com/gribard/sveltekit-shadcn-auth-starter.git",
 			external: true
 		}
 	],
