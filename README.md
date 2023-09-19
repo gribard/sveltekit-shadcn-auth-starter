@@ -31,6 +31,7 @@ I have commented out the email functionality in `src/lib/server/email-send.ts` f
    --name mypostgresdb \
    -e POSTGRES_PASSWORD=mysecretpassword \
    -e PGDATA=/var/lib/postgresql/data/pgdata \
+   -p 5432:5432 \
    postgres
    ```
 2. Rename `sample.env` from the root directory to `.env` and edit the PRISMA_URL:
@@ -43,7 +44,7 @@ I have commented out the email functionality in `src/lib/server/email-send.ts` f
    ```
 4. Run initial Prisma migration
    ```
-   prisma migrate dev --name init
+   npx prisma migrate dev --name init
    ```
 5. Start the app
    ```
@@ -51,7 +52,7 @@ I have commented out the email functionality in `src/lib/server/email-send.ts` f
    ```
 6. Create an account
 
-   6.1 Go ahead to your localhost address and create an account. After clicking the "Sign up" button you will be redirected to the Email Confirmation Page.
+   6.1 Go to [http://localhost:5173/](http://localhost:5173/) and create an account. After clicking the "Sign up" button you will be redirected to the Email Confirmation Page.
 
    6.2 If you haven't configured the nodemailer in the .env file, open Prisma Studio:
 
