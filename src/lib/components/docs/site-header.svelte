@@ -12,7 +12,7 @@
 	import { page } from "$app/stores";
 	import * as Form from "@/registry/new-york/ui/form";
 	import type { SuperValidated } from "sveltekit-superforms";
-	export let form: SuperValidated<FormSchema> = $page.data.select;
+	// export let form: SuperValidated<FormSchema> = $page.data.select;
 
 	import { Icons, LightSwitch, MainNav, MobileNav } from "@/components/docs";
 	import { buttonVariants } from "@/registry/new-york/ui/button";
@@ -34,9 +34,6 @@
 		switchLanguage(event.value);
 	}
 
-	let className: string | undefined | null = undefined;
-	export { className as class };
-
 	export let user: any;
 </script>
 
@@ -52,11 +49,7 @@
 		>
 			<div class="w-full flex-1 md:w-auto md:flex-none">
 				<!-- Command Menu Here -->
-				<Select.Root
-					disabled
-					selected={selectedLang}
-					onSelectedChange={switchLang}
-				>
+				<Select.Root selected={selectedLang} onSelectedChange={switchLang}>
 					<Select.Trigger class="w-[60px]">
 						<Select.Value placeholder="Select Language" />
 					</Select.Trigger>
