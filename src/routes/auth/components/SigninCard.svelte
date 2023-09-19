@@ -5,7 +5,7 @@
 	import { i } from "@inlang/sdk-js";
 
 	import { superForm } from "sveltekit-superforms/client";
-	//import SuperDebug from 'sveltekit-superforms/client/SuperDebug.svelte';
+	// import SuperDebug from "sveltekit-superforms/client/SuperDebug.svelte";
 	import { userSchema } from "$lib/config/zod-schemas";
 	import { AlertTriangle } from "lucide-svelte";
 	import { Loader } from "lucide-svelte";
@@ -29,6 +29,8 @@
 	export { className as class };
 
 	let isLoading = false;
+	let formErrors = false;
+
 	async function onSubmit() {
 		isLoading = true;
 
@@ -38,6 +40,7 @@
 	}
 </script>
 
+<!-- <SuperDebug data={$form} /> -->
 <form method="POST" action="/auth?/signin" use:enhance>
 	<!-- on:submit|preventDefault={onSubmit} -->
 	<Card.Root>
@@ -58,7 +61,9 @@
 				</aside>
 			{/if}
 			<div class="flex flex-col space-y-2 text-center">
-				<h1 class="text-2xl font-semibold tracking-tight">{i("signin")}</h1>
+				<h1 class="text-2xl font-semibold tracking-tight">
+					{i("signin")}
+				</h1>
 				<p class="text-sm text-muted-foreground">
 					Enter your email below to sign in.
 				</p>
@@ -72,7 +77,7 @@
 						>
 							<span class="sr-only">{i("email")}</span>
 							<input
-								id="email"
+								id="signinEmail"
 								name="email"
 								type="email"
 								placeholder={i("email")}
@@ -86,7 +91,9 @@
 								disabled={isLoading}
 							/>
 							{#if $errors.email}
-								<small class="text-red-600 pl-2">{$errors.email}</small>
+								<small class="text-red-600 pl-2"
+									>{$errors.email}</small
+								>
 							{/if}
 						</label>
 					</div>
@@ -96,7 +103,7 @@
 						>
 							<span class="sr-only">{i("password")}</span>
 							<input
-								id="password"
+								id="signinPassword"
 								name="password"
 								type="password"
 								placeholder={i("password")}
@@ -106,7 +113,9 @@
 								class:input-error={$errors.password}
 							/>
 							{#if $errors.password}
-								<small class="text-red-600 pl-2">{$errors.password}</small>
+								<small class="text-red-600 pl-2"
+									>{$errors.password}</small
+								>
 							{/if}
 						</label>
 						<input hidden name="type" value="signin" />

@@ -18,7 +18,6 @@ const signUpSchema = userSchema.pick({
 });
 // export const load = async (event) => {
 // 	const session = await event.locals.auth.validate();
-// 	console.log("PIZDA MASII");
 // 	if (session) throw redirect(302, "/dashboard");
 // 	const form = await superValidate(event, signUpSchema);
 // 	return {
@@ -64,13 +63,16 @@ export const actions = {
 			console.error(e);
 			// email already in use
 			//const { fieldErrors: errors } = e.flatten();
-			return setError(signinForm, "", "The email or password is incorrect.");
+			return setError(
+				signinForm,
+				"",
+				"The email or password is incorrect."
+			);
 		}
 
 		return { signinForm };
 	},
 	signout: async ({ locals }) => {
-		console.log("PIZDA signout");
 		const session = await locals.auth.validate();
 		if (!session) {
 			throw redirect(302, "/auth");

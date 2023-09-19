@@ -69,6 +69,11 @@ export const docsConfig: DocsConfig = {
 					items: []
 				},
 				{
+					title: "Changelog",
+					href: "/docs/changelog",
+					items: []
+				},
+				{
 					title: "About",
 					href: "/docs/about",
 					items: []
@@ -157,7 +162,6 @@ export const docsConfig: DocsConfig = {
 				{
 					title: "Data Table",
 					href: "/docs/components/data-table",
-					label: "Preview",
 					items: []
 				},
 				// {
@@ -179,9 +183,8 @@ export const docsConfig: DocsConfig = {
 				},
 				{
 					title: "Form",
-					href: "#",
-					label: "Soon",
-					disabled: true,
+					href: "/docs/components/form",
+					label: "Preview",
 					items: []
 				},
 				{
@@ -326,12 +329,12 @@ export const examples: Example[] = [
 	{
 		name: "Playground",
 		href: "/examples/playground",
-		code: "https://github.com/huntabyte/shadcn-svelte/tree/main/apps/www/apps/www/app/examples/playground"
+		code: "https://github.com/huntabyte/shadcn-svelte/tree/main/apps/www/src/routes/examples/playground"
 	},
 	{
 		name: "Music",
 		href: "/examples/music",
-		code: "https://github.com/huntabyte/shadcn-svelte/tree/main/apps/www/apps/www/app/examples/music"
+		code: "https://github.com/huntabyte/shadcn-svelte/tree/main/apps/www/src/routes/examples/music"
 	},
 	{
 		name: "Authentication",

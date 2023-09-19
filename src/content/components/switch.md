@@ -38,8 +38,20 @@ npm install bits-ui
 
 ```svelte
 <script lang="ts">
-  import { Switch } from "$components/ui/switch";
+  import { Switch } from "$lib/components/ui/switch";
 </script>
 
 <Switch />
 ```
+
+## Examples
+
+### Form
+
+When using the switch component in a form, you'll want to use the `<Form.Switch />` component, which is a wrapper around your existing `<Switch />` component that makes it seamlessly integrate with forms.
+
+<ComponentPreview name="switch-form">
+
+<div />
+
+</ComponentPreview>

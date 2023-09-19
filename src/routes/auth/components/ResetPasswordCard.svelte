@@ -90,7 +90,7 @@
 							{/if}
 						</label>
 						{#if $message}
-							<div class="message text-lime-600 dark:text-lime-300">
+							<div class="message">
 								<small>{$message}</small>
 							</div>
 						{/if}

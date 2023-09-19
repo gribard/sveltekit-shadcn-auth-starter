@@ -22,14 +22,14 @@ For example, the Accordion component is split into four `.svelte` files:
 They can then be imported from the `accordion/index.ts` file like so:
 
 ```ts
-import * as Accordion from '$components/ui/accordion"
+import * as Accordion from '$lib/components/ui/accordion"
 // or
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger
-} from "$components/ui/accordion"
+} from "$lib/components/ui/accordion"
 ```
 
 Regardless of the import approach you take, the components will be tree-shaken by Rollup, so you don't have to worry about unused components being bundled into your app.
@@ -79,6 +79,22 @@ Configure the import alias for components: › $lib/components
 Configure the import alias for utils: › $lib/utils
 ```
 
+### Setup path aliases
+
+If you changed the path aliases from the default, you'll also need to update your `svelte.config.js` file to include those aliases.
+
+```js title="svelte.config.js"
+const config = {
+  // ... other config
+  kit: {
+    // ... other config
+    alias: {
+      $lib: "./src/lib"
+    }
+  }
+};
+```
+
 </Steps>
 
 ## Manual Installation
@@ -106,7 +122,7 @@ npx svelte-add@latest tailwindcss
 Add the following dependencies to your project:
 
 ```bash
-npm install tailwindcss-animate tailwind-variants clsx tailwind-merge
+npm install tailwind-variants clsx tailwind-merge
 ```
 
 ### Configure tailwind.config.js
@@ -115,7 +131,6 @@ This is what this project's `tailwind.config.js` file looks like:
 
 ```javascript title="tailwind.config.js"
 import { fontFamily } from "tailwindcss/defaultTheme";
-import tailwindcssAnimate from "tailwindcss-animate";
 
 /** @type {import('tailwindcss').Config} */
 const config = {
@@ -174,8 +189,7 @@ const config = {
         sans: ["Inter", ...fontFamily.sans]
       }
     }
-  },
-  plugins: [tailwindcssAnimate]
+  }
 };
 
 export default config;
@@ -271,18 +285,81 @@ Add the following to your `src/app.postcss` file. You can learn more about using
 }
 ```
 
-### Add a cn helper
+### Configure utils
 
-You'll want to create a `cn` helper to make it easier to conditionally add Tailwind CSS classes. This project defines it in `lib/utils.ts`:
+You'll want to create a `cn` helper to make it easier to conditionally add Tailwind CSS classes. Additionally, you'll want to add the custom transition that is used by various components.
 
-```ts title="lib/utils.ts"
-import type { ClassValue } from "clsx";
-import { clsx } from "clsx";
+```ts title="src/lib/utils.ts"
+import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { cubicOut } from "svelte/easing";
+import type { TransitionConfig } from "svelte/transition";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
+
+type FlyAndScaleParams = {
+  y?: number;
+  x?: number;
+  start?: number;
+  duration?: number;
+};
+
+export const flyAndScale = (
+  node: Element,
+  params: FlyAndScaleParams = { y: -8, x: 0, start: 0.95, duration: 150 }
+): TransitionConfig => {
+  const style = getComputedStyle(node);
+  const transform = style.transform === "none" ? "" : style.transform;
+
+  const scaleConversion = (
+    valueA: number,
+    scaleA: [number, number],
+    scaleB: [number, number]
+  ) => {
+    const [minA, maxA] = scaleA;
+    const [minB, maxB] = scaleB;
+
+    const percentage = (valueA - minA) / (maxA - minA);
+    const valueB = percentage * (maxB - minB) + minB;
+
+    return valueB;
+  };
+
+  const styleToString = (
+    style: Record<string, number | string | undefined>
+  ): string => {
+    return Object.keys(style).reduce((str, key) => {
+      if (style[key] === undefined) return str;
+      return str + key + ":" + style[key] + ";";
+    }, "");
+  };
+
+  return {
+    duration: params.duration ?? 200,
+    delay: 0,
+    css: (t) => {
+      const y = scaleConversion(t, [0, 1], [params.y ?? 5, 0]);
+      const x = scaleConversion(t, [0, 1], [params.x ?? 0, 0]);
+      const scale = scaleConversion(t, [0, 1], [params.start ?? 0.95, 1]);
+
+      return styleToString({
+        transform:
+          transform +
+          "translate3d(" +
+          x +
+          "px, " +
+          y +
+          "px, 0) scale(" +
+          scale +
+          ")",
+        opacity: t
+      });
+    },
+    easing: cubicOut
+  };
+};
 ```
 
 ### Import styles to your app
@@ -301,7 +378,7 @@ Create `src/routes/+layout.svelte` and import the styles:
 
 ## Icons
 
-This project uses icons from [Lucide](https://lucide.dev/), but feel free to use any icon library.
+This project uses icons from [Lucide](https://lucide.dev/) for the `default` style, and [Radix](https://radix-ui.com/icons) for the `new-york` style, but feel free to use any icon library.
 
 ## App structure
 

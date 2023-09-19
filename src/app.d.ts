@@ -20,7 +20,7 @@ declare global {
 		interface Error {
 			code?: string;
 			errorId?: string;
-		}
+	}
 	}
 
 	namespace svelteHTML {

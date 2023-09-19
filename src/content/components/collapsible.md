@@ -25,10 +25,10 @@ npx shadcn-svelte@latest add collapsible
 
 <ManualInstall>
 
-1. Install `radix-svelte`:
+1. Install `bits-ui`:
 
 ```bash
-npm install radix-svelte
+npm install bits-ui
 ```
 
 2. Copy and paste the component source files linked at the top of this page into your project.
@@ -39,7 +39,7 @@ npm install radix-svelte
 
 ```svelte
 <script lang="ts">
-  import * as Collapsible from "$components/ui/collapsible";
+  import * as Collapsible from "$lib/components/ui/collapsible";
 </script>
 
 <Collapsible.Root>

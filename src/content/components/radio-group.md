@@ -38,8 +38,8 @@ npm install bits-ui
 
 ```svelte
 <script lang="ts">
-  import { Label } from "$components/ui/label";
-  import * as RadioGroup from "$components/ui/radio-group";
+  import { Label } from "$lib/components/ui/label";
+  import * as RadioGroup from "$lib/components/ui/radio-group";
 </script>
 
 <RadioGroup.Root value="option-one">
@@ -53,3 +53,15 @@ npm install bits-ui
   </div>
 </RadioGroup.Root>
 ```
+
+## Examples
+
+### Form
+
+When using a radio group with a form, you'll want to use the `<Form.RadioGroup />` and `<Form.RadioItem />` components, which are wrappers around your existing radio group components that nicely handle the form state for you.
+
+<ComponentPreview name="radio-group-form">
+
+<div />
+
+</ComponentPreview>

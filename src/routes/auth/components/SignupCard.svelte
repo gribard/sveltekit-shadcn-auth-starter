@@ -52,7 +52,9 @@
 		</Card.Header>
 		<Card.Content class="grid gap-4">
 			<div class="flex flex-col space-y-2 text-center">
-				<h1 class="text-2xl font-semibold tracking-tight">{i("signup")}</h1>
+				<h1 class="text-2xl font-semibold tracking-tight">
+					{i("signup")}
+				</h1>
 				<p class="text-sm text-muted-foreground">
 					Enter your email below to create your account
 				</p>
@@ -82,7 +84,9 @@
 							class:input-error={$errors.firstName}
 						/>
 						{#if $errors.firstName}
-							<small class="text-red-600 pl-2">{$errors.firstName}</small>
+							<small class="text-red-600 pl-2"
+								>{$errors.firstName}</small
+							>
 						{/if}
 					</label>
 				</div>
@@ -109,7 +113,9 @@
 							class:input-error={$errors.lastName}
 						/>
 						{#if $errors.lastName}
-							<small class="text-red-600 pl-2">{$errors.lastName}</small>
+							<small class="text-red-600 pl-2"
+								>{$errors.lastName}</small
+							>
 						{/if}
 					</label>
 				</div>
@@ -120,7 +126,7 @@
 						<span class="sr-only">{i("email")}</span>
 
 						<input
-							id="email"
+							id="signupEmail"
 							name="email"
 							type="email"
 							placeholder={i("email")}
@@ -137,7 +143,9 @@
 							class:input-error={$errors.email}
 						/>
 						{#if $errors.email}
-							<small class="text-red-600 pl-2">{$errors.email}</small>
+							<small class="text-red-600 pl-2"
+								>{$errors.email}</small
+							>
 						{/if}
 					</label>
 				</div>
@@ -147,7 +155,7 @@
 					>
 						<span class="sr-only">{i("password")}</span>
 						<input
-							id="password"
+							id="signupPassword"
 							name="password"
 							type="password"
 							placeholder={i("password")}
@@ -163,7 +171,9 @@
 							class:input-error={$errors.password}
 						/>
 						{#if $errors.password}
-							<small class="text-red-600 pl-2">{$errors.password}</small>
+							<small class="text-red-600 pl-2"
+								>{$errors.password}</small
+							>
 						{/if}
 					</label>
 				</div>
@@ -182,9 +192,14 @@
 							class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
 							><span class="ml-1">
 								I accept the
-								<a href="/terms" class="text-primaryHover underline">terms</a>
+								<a
+									href="/terms"
+									class="text-primaryHover underline">terms</a
+								>
 								and
-								<a href="/privacy" class="text-primaryHover underline"
+								<a
+									href="/privacy"
+									class="text-primaryHover underline"
 									>privacy policy</a
 								>
 								<!--{#if $errors.terms}

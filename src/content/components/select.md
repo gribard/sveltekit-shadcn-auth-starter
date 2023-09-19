@@ -38,11 +38,11 @@ npm install bits-ui
 
 ```svelte
 <script lang="ts">
-  import * as Select from "$components/ui/select";
+  import * as Select from "$lib/components/ui/select";
 </script>
 
 <Select.Root>
-  <Select.Trigger className="w-[180px]">
+  <Select.Trigger class="w-[180px]">
     <Select.Value placeholder="Theme" />
   </Select.Trigger>
   <Select.Content>
@@ -52,3 +52,15 @@ npm install bits-ui
   </Select.Content>
 </Select.Root>
 ```
+
+## Examples
+
+### Form
+
+When using the select component in a form, you'll want to use the `<Form.Select/>` component, which is a wrapper around your existing `<Select/>` component that makes it seamlessly integrate with forms.
+
+<ComponentPreview name="select-form">
+
+<div />
+
+</ComponentPreview>

@@ -1,12 +1,12 @@
 export const siteConfig = {
-	name: "shadcn-svelte",
-	url: "https://shadcn-svelte.com",
-	ogImage: "https://shadcn-svelte.com/og.png",
+	name: "sveltekit-shadcn-auth-starter",
+	url: "https://github.com/gribard/sveltekit-shadcn-auth-starter",
+	ogImage: "https://shadcn-svelte.com/auth.png",
 	description:
-		"Beautifully designed components built with Melt UI and Tailwind CSS.",
+		"Beautiful SvelteKit starter project with basic authentication functionality",
 	links: {
 		twitter: "https://twitter.com/huntabyte",
-		github: "https://github.com/huntabyte/shadcn-svelte",
+		github: "https://github.com/gribard/sveltekit-shadcn-auth-starter",
 		shadTwitter: "https://twitter.com/shadcn",
 		shadGithub: "https://github.com/shadcn/ui"
 	},

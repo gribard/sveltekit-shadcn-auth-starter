@@ -1,4 +1,19 @@
+<script lang="ts" context="module">
+	import { z } from "zod";
+	export const formSchema = z.object({
+		email: z
+			.string({ required_error: "Please select an email to display" })
+			.email()
+	});
+	export type FormSchema = typeof formSchema;
+</script>
+
 <script lang="ts">
+	import { page } from "$app/stores";
+	import * as Form from "@/registry/new-york/ui/form";
+	import type { SuperValidated } from "sveltekit-superforms";
+	export let form: SuperValidated<FormSchema> = $page.data.select;
+
 	import { Icons, LightSwitch, MainNav, MobileNav } from "@/components/docs";
 	import { buttonVariants } from "@/registry/new-york/ui/button";
 	import { siteConfig } from "$lib/config/site";
@@ -10,12 +25,13 @@
 
 	import { i, languages, language, switchLanguage } from "@inlang/sdk-js";
 	let selectedLanguage: string = language || "en";
+	$: selectedLang = { value: selectedLanguage, label: selectedLanguage };
 
 	import * as Select from "@/registry/new-york/ui/select";
 	// import LanguageSelect from "./LanguageSelect.svelte";
-
-	function switchLang() {
-		switchLanguage(selectedLanguage);
+	import { Label } from "@/registry/new-york/ui/label";
+	function switchLang(event) {
+		switchLanguage(event.value);
 	}
 
 	let className: string | undefined | null = undefined;
@@ -30,14 +46,19 @@
 	<div class="container flex h-14 items-center">
 		<MainNav />
 		<MobileNav />
+
 		<div
 			class="flex flex-1 items-center justify-between space-x-2 sm:space-x-4 md:justify-end"
 		>
 			<div class="w-full flex-1 md:w-auto md:flex-none">
 				<!-- Command Menu Here -->
-				<Select.Root bind:value={selectedLanguage} onValueChange={switchLang}>
+				<Select.Root
+					disabled
+					selected={selectedLang}
+					onSelectedChange={switchLang}
+				>
 					<Select.Trigger class="w-[60px]">
-						<Select.Value placeholder="Language" />
+						<Select.Value placeholder="Select Language" />
 					</Select.Trigger>
 					<Select.Content>
 						<Select.Group>

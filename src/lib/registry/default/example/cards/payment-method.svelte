@@ -105,7 +105,9 @@
 					</Select.Trigger>
 					<Select.Content>
 						{#each months as month, i}
-							<Select.Item value={i + 1} label={month}>{month}</Select.Item>
+							<Select.Item value={i + 1} label={month}
+								>{month}</Select.Item
+							>
 						{/each}
 					</Select.Content>
 				</Select.Root>
