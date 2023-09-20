@@ -74,13 +74,7 @@
 							autocomplete="given-name"
 							data-invalid={$errors.firstName}
 							bind:value={$form.firstName}
-							class="flex h-10 w-full rounded-md border border-input bg-transparent
-						px-3 py-2 text-sm ring-offset-background file:border-0
-						file:bg-transparent file:text-sm file:font-medium
-						placeholder:text-muted-foreground focus-visible:outline-none
-						focus-visible:ring-2 focus-visible:ring-ring
-						focus-visible:ring-offset-2 disabled:cursor-not-allowed
-						disabled:opacity-50"
+							class="flex h-9 w-full rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
 							class:input-error={$errors.firstName}
 						/>
 						{#if $errors.firstName}
@@ -101,13 +95,7 @@
 							autocomplete="family-name"
 							data-invalid={$errors.lastName}
 							bind:value={$form.lastName}
-							class="flex h-10 w-full rounded-md border border-input bg-transparent
-						px-3 py-2 text-sm ring-offset-background file:border-0
-						file:bg-transparent file:text-sm file:font-medium
-						placeholder:text-muted-foreground focus-visible:outline-none
-						focus-visible:ring-2 focus-visible:ring-ring
-						focus-visible:ring-offset-2 disabled:cursor-not-allowed
-						disabled:opacity-50"
+							class="flex h-9 w-full rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
 							class:input-error={$errors.lastName}
 						/>
 						{#if $errors.lastName}
@@ -129,13 +117,7 @@
 							autocomplete="email"
 							data-invalid={$errors.email}
 							bind:value={$form.email}
-							class="flex h-10 w-full rounded-md border
-						border-input bg-transparent px-3 py-2 text-sm ring-offset-background
-						file:border-0 file:bg-transparent file:text-sm file:font-medium
-						placeholder:text-muted-foreground focus-visible:outline-none
-						focus-visible:ring-2 focus-visible:ring-ring
-						focus-visible:ring-offset-2 disabled:cursor-not-allowed
-						disabled:opacity-50"
+							class="flex h-9 w-full rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
 							class:input-error={$errors.email}
 						/>
 						{#if $errors.email}
@@ -155,13 +137,7 @@
 							placeholder={i("password")}
 							data-invalid={$errors.password}
 							bind:value={$form.password}
-							class="flex h-10 w-full rounded-md border
-						border-input bg-transparent px-3 py-2 text-sm ring-offset-background
-						file:border-0 file:bg-transparent file:text-sm file:font-medium
-						placeholder:text-muted-foreground focus-visible:outline-none
-						focus-visible:ring-2 focus-visible:ring-ring
-						focus-visible:ring-offset-2 disabled:cursor-not-allowed
-						disabled:opacity-50"
+							class="flex h-9 w-full rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
 							class:input-error={$errors.password}
 						/>
 						{#if $errors.password}
