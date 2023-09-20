@@ -79,7 +79,7 @@
 						<span class="sr-only">GitHub</span>
 					</div>
 				</a>
-				<a href={siteConfig.links.twitter} target="_blank" rel="noreferrer">
+				<!-- <a href={siteConfig.links.twitter} target="_blank" rel="noreferrer">
 					<div
 						class={cn(
 							buttonVariants({
@@ -92,7 +92,7 @@
 						<Icons.twitter class="h-5 w-5 fill-current" />
 						<span class="sr-only">Twitter</span>
 					</div>
-				</a>
+				</a> -->
 				<LightSwitch />
 				{#if user}
 					<DropdownMenu.Root positioning={{ placement: "bottom-end" }}>

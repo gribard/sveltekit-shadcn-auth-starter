@@ -49,17 +49,6 @@
 			<Card.Description />
 		</Card.Header>
 		<Card.Content class="space-y-2">
-			{#if $errors._errors}
-				<aside class="alert variant-filled-error mt-6 content-center">
-					<!-- Icon -->
-					<!-- Message -->
-					<div class="alert-message">
-						<AlertTriangle size="42" class="mx-auto" />
-						<h3 class="h3">{i("signinProblem")}</h3>
-						<p class="text-red-600">{$errors._errors}</p>
-					</div>
-				</aside>
-			{/if}
 			<div class="flex flex-col space-y-2 text-center">
 				<h1 class="text-2xl font-semibold tracking-tight">
 					{i("signin")}
@@ -91,9 +80,7 @@
 								disabled={isLoading}
 							/>
 							{#if $errors.email}
-								<small class="text-red-600 pl-2"
-									>{$errors.email}</small
-								>
+								<small class="text-red-600">{$errors.email}</small>
 							{/if}
 						</label>
 					</div>
@@ -113,11 +100,19 @@
 								class:input-error={$errors.password}
 							/>
 							{#if $errors.password}
-								<small class="text-red-600 pl-2"
-									>{$errors.password}</small
-								>
+								<small class="text-red-600">{$errors.password}</small>
 							{/if}
 						</label>
+						{#if $errors._errors}
+							<aside class="alert variant-filled-error mt-6 content-center">
+								<!-- Icon -->
+								<!-- Message -->
+								<div class="alert-message text-center flex justify-between">
+									<AlertTriangle size="24" class="text-red-600" />
+									<p class="text-red-600">{$errors._errors}</p>
+								</div>
+							</aside>
+						{/if}
 						<input hidden name="type" value="signin" />
 					</div>
 					<Button

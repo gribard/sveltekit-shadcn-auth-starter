@@ -84,9 +84,7 @@
 							class:input-error={$errors.firstName}
 						/>
 						{#if $errors.firstName}
-							<small class="text-red-600 pl-2"
-								>{$errors.firstName}</small
-							>
+							<small class="text-red-600">{$errors.firstName}</small>
 						{/if}
 					</label>
 				</div>
@@ -113,9 +111,7 @@
 							class:input-error={$errors.lastName}
 						/>
 						{#if $errors.lastName}
-							<small class="text-red-600 pl-2"
-								>{$errors.lastName}</small
-							>
+							<small class="text-red-600">{$errors.lastName}</small>
 						{/if}
 					</label>
 				</div>
@@ -143,9 +139,7 @@
 							class:input-error={$errors.email}
 						/>
 						{#if $errors.email}
-							<small class="text-red-600 pl-2"
-								>{$errors.email}</small
-							>
+							<small class="text-red-600">{$errors.email}</small>
 						{/if}
 					</label>
 				</div>
@@ -171,9 +165,7 @@
 							class:input-error={$errors.password}
 						/>
 						{#if $errors.password}
-							<small class="text-red-600 pl-2"
-								>{$errors.password}</small
-							>
+							<small class="text-red-600">{$errors.password}</small>
 						{/if}
 					</label>
 				</div>
@@ -192,14 +184,9 @@
 							class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
 							><span class="ml-1">
 								I accept the
-								<a
-									href="/terms"
-									class="text-primaryHover underline">terms</a
-								>
+								<a href="/terms" class="text-primaryHover underline">terms</a>
 								and
-								<a
-									href="/privacy"
-									class="text-primaryHover underline"
+								<a href="/privacy" class="text-primaryHover underline"
 									>privacy policy</a
 								>
 								<!--{#if $errors.terms}
