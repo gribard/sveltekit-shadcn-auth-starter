@@ -5,7 +5,7 @@
 	console.log(data.user);
 </script>
 
-<div class="px-6 py-12 lg:px-8 mx-auto">
+<div class="py-12 mx-auto">
 	<h1 class="text-4xl px-8">{i("welcome")}, {data.user.firstName}!</h1>
 	<slot />
 </div>

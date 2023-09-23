@@ -16,8 +16,8 @@
 	export let data;
 </script>
 
-<div class="mx-auto p-10">
-	<div class="w-[350px]">
+<div class="p-4 sm:p-8">
+	<div class="min-w-[300px] max-w-sm mx-auto">
 		<Tabs.Root value="signin" class="w-full">
 			<Tabs.List class="grid w-full grid-cols-2">
 				<Tabs.Trigger value="signin">{i("signin")}</Tabs.Trigger>

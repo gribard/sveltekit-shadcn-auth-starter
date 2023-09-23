@@ -38,32 +38,31 @@
 </script>
 
 <header
-	class="supports-backdrop-blur:bg-background/60 sticky top-0 z-40 w-full border-b bg-background/95 shadow-sm backdrop-blur"
+	class="supports-backdrop-blur:bg-background/60 sticky top-0 z-40 border-b bg-background/95 shadow-sm backdrop-blur"
 >
-	<div class="container flex h-14 items-center">
+	<div class="flex h-14 mx-4 items-center">
 		<MainNav />
 		<MobileNav />
 
 		<div
-			class="flex flex-1 items-center justify-between space-x-2 sm:space-x-4 md:justify-end"
+			class="flex flex-1 items-center justify-between space-x-2 sm:space-x-4 lg:justify-end"
 		>
-			<div class="w-full flex-1 md:w-auto md:flex-none">
-				<!-- Command Menu Here -->
-				<Select.Root selected={selectedLang} onSelectedChange={switchLang}>
-					<Select.Trigger class="w-[60px]">
-						<Select.Value placeholder="Select Language" />
-					</Select.Trigger>
-					<Select.Content>
-						<Select.Group>
-							<!-- <Select.Label>Languages</Select.Label> -->
-							{#each languages as lang}
-								<Select.Item value={lang} label={lang}>{lang}</Select.Item>
-							{/each}
-						</Select.Group>
-					</Select.Content>
-					<Select.Input name="favoriteFruit" />
-				</Select.Root>
-			</div>
+			<!-- Command Menu Here -->
+			<Select.Root selected={selectedLang} onSelectedChange={switchLang}>
+				<Select.Trigger class="w-[60px]">
+					<Select.Value placeholder="Select Language" />
+				</Select.Trigger>
+				<Select.Content>
+					<Select.Group>
+						<!-- <Select.Label>Languages</Select.Label> -->
+						{#each languages as lang}
+							<Select.Item value={lang} label={lang}>{lang}</Select.Item>
+						{/each}
+					</Select.Group>
+				</Select.Content>
+				<Select.Input name="favoriteFruit" />
+			</Select.Root>
+
 			<nav class="flex items-center space-x-1">
 				<a href={siteConfig.links.github} target="_blank" rel="noreferrer">
 					<div
@@ -79,20 +78,6 @@
 						<span class="sr-only">GitHub</span>
 					</div>
 				</a>
-				<!-- <a href={siteConfig.links.twitter} target="_blank" rel="noreferrer">
-					<div
-						class={cn(
-							buttonVariants({
-								size: "sm",
-								variant: "ghost"
-							}),
-							"w-9 px-0"
-						)}
-					>
-						<Icons.twitter class="h-5 w-5 fill-current" />
-						<span class="sr-only">Twitter</span>
-					</div>
-				</a> -->
 				<LightSwitch />
 				{#if user}
 					<DropdownMenu.Root positioning={{ placement: "bottom-end" }}>

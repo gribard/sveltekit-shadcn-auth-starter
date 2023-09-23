@@ -32,13 +32,11 @@
 <!-- This causes the new eslint-plugin-svelte: https://github.com/sveltejs/eslint-plugin-svelte/issues/492 -->
 <!-- {@html `<\u{73}cript nonce="%sveltekit.nonce%">(${setInitialClassState.toString()})();</script>`} -->
 <!-- </svelte:head> -->
-<Metadata />
 
-<div class="relative flex min-h-screen flex-col" id="page">
+<Metadata />
+<div class="max-w-7xl mx-auto">
 	<SiteHeader user={data?.user} />
-	<!-- <div class="flex-1"> -->
 	<slot />
-	<!-- </div> -->
 	<SiteFooter />
 	{#if dev}
 		<TailwindIndicator />

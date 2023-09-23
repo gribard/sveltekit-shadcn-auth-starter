@@ -4,6 +4,4 @@
 	// console.dir(data?.user.firstName);
 </script>
 
-<div class="w-full flex">
-	<DashboardComponent />
-</div>
+<DashboardComponent />
